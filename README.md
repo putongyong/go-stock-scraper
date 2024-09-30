@@ -9,26 +9,25 @@ goroutines to scrape multiple tickers in parallel, making it extremely fast and 
 - Easily modify the list of tickers by editing a simple text file (`tickers.txt`). 
 - Outputs stock data with a timestamp. 
 
-## Project Structure 
+## Project Basic Structure 
 ``` 
 . 
-■■■ Dockerfile # Docker configuration for containerization 
-■■■ go.mod # Go module dependencies 
-■■■ main.go # Entry point of the Go application 
-■■■ scraper/ # Contains scraping logic 
-■■■ utils/ # Utility functions (timestamp, file reading) 
-■■■ tickers.txt # List of stock ticker symbols 
-■■■ .gitignore # Git ignore file 
-■■■ README.md # Project documentation (this file) 
+├── Dockerfile  # Docker configuration for containerization 
+├── go.mod      # Go module dependencies 
+├── main.go     # Entry point of the Go application 
+├── scraper/    # Contains scraping logic 
+├── utils/      # Utility functions (timestamp, file reading) 
+├── tickers.txt # List of stock ticker symbols 
+├── README.md   # Project documentation (this file) 
 ```
 
-### Prerequisites 
+## Prerequisites 
 
 To run this project, you need: 
 - **Go 1.20 or later** 
 - **Docker** (optional, if running inside a container) 
 
-### How it Works 
+## How it Works 
 
 This stock scraper reads ticker symbols from `tickers.txt` and
 uses **goroutines** to scrape the stock data in parallel. This parallelism greatly improves execution speed, especially when scraping multiple stocks at once. 
@@ -38,9 +37,9 @@ For each ticker, the application scrapes the following data:
 - **Regular market change** 
 - **Regular market change percentage** 
 
-### Setup Instructions 
+## Setup Instructions 
 
-#### 1. Running Locally 
+### 1. Running Locally 
 1. Install Go 1.20+: [Go Installation](https://golang.org/doc/install) 
 2. Clone this repository: 
 ```bash 
@@ -59,7 +58,7 @@ AAPL GOOGL MSFT TSLA
 bash go run main.go 
 ``` 
 
-#### 2. Running with Docker Compose
+### 2. Running with Docker Compose
 If you prefer to use Docker Compose for easier management, you can use the included docker-compose.yml file.
 
 Running the Application:
@@ -74,13 +73,13 @@ Here is an example:
 ![Alt text](media/scraper_docker_1.png)
 ![Alt text](media/scraper_docker_2.png)
 
-### Performance 
+## Performance 
 The application leverages **goroutines**, Go's built-in
 concurrency feature, allowing it to scrape multiple stock tickers simultaneously. This parallel scraping makes the tool significantly faster than sequential scraping methods, especially when handling a large number of tickers. 
 
 For example, scraping 10 tickers in parallel can be done in nearly the same amount of time as scraping 1 ticker! 
 
-### Contributing 
+## Contributing 
 1. Fork the repository. 
 2. Create a new branch: `git checkout -b feature/your-feature`. 
 3. Make your changes. 
@@ -88,5 +87,5 @@ For example, scraping 10 tickers in parallel can be done in nearly the same amou
 . Push to the branch: `git push origin feature/your-feature`. 
 6. Open a pull request. 
 
-### License 
+## License 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

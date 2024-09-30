@@ -1,0 +1,11 @@
+# Ignore the local bin directory (if any)
+bin/
+# Ignore build artifacts
+*.out
+*.exe
+# Ignore version control directories
+.git
+.gitignore
+# Ignore editor settings
+.vscode/
+.idea/

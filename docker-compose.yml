@@ -1,0 +1,8 @@
+version: '3'
+services:
+  stock-scraper:
+    build: .
+    container_name: stock-scraper
+    volumes:
+      - ./tickers.txt:/root/tickers.txt
+    command: ./app

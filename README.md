@@ -1,11 +1,11 @@
 # Go Stock Scraper
 
-**A fast Go-based stock scraping tool** that fetches real-time stock data (price, market change, and percentage change) from Yahoo Finance using the Colly web scraping framework. 
+**A fast Go-based stock scraping tool** that fetches real-time stock data (price, market change, and percentage change) from Yahoo Finance using the Colly web scraping framework with a certain time interval. 
 
 ![Alt text](media/yahoo_finance.png)
 
 ## Features 
-- Scrapes real-time stock data from Yahoo Finance. 
+- Scrapes real-time stock data from Yahoo Finance every certain time interval (for example, 10s). 
 - **Concurrency with Goroutines**: Utilizes Go's
 goroutines to scrape multiple tickers in parallel, making it extremely fast and efficient. 
 - Easily modify the list of tickers by editing a simple text file (`tickers.txt`). 

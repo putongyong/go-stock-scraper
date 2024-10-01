@@ -3,12 +3,31 @@ package main
 import (
 	"fmt"
 	"log"
-	"sync" // Import the sync package for WaitGroup
+	"sync"
+	"time" // Import time package for scheduling
 	"github.com/putongyong/go-stock-scraper/scraper"
 	"github.com/putongyong/go-stock-scraper/utils"
 )
 
+const interval int = 10
+
 func main() {
+	// Create a schedule that triggers every 30 seconds
+	schedule := time.NewTicker(time.Duration(interval) * time.Second)
+	defer schedule.Stop() // Stop the schedule when done
+
+	// Run the task immediately at the start
+	fmt.Println("-------------START---------------")
+	executeTask()
+
+	// Loop to run the task every time the schedule ticks
+	for range schedule.C {
+		fmt.Printf("-------------%d seconds---------------\n", interval)
+		executeTask()
+	}
+}
+
+func executeTask() {
 	// Read tickers from the file
 	tickers, err := utils.ReadTickersFromFile("tickers.txt")
 	if err != nil {

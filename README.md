@@ -45,7 +45,7 @@ For each ticker, the application scrapes the following data:
 1. Install Go 1.20+: [Go Installation](https://golang.org/doc/install) 
 2. Clone this repository: 
 ```bash 
-git clone https://github.com/yourusername/go-stock-scraper.git cd go-stock-scraper 
+git clone https://github.com/putongyong/go-stock-scraper.git cd go-stock-scraper 
 ``` 
 3. Install dependencies:
 ```bash 

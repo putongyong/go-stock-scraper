@@ -53,11 +53,14 @@ go mod tidy
 ``` 
 4. Modify `tickers.txt` to include your list of ticker symbols (one per line): 
 ```
-AAPL GOOGL MSFT TSLA 
+AAPL 
+GOOGL 
+MSFT 
+TSLA 
 ``` 
 5. Run the application: 
-```
-bash go run main.go 
+```bash 
+go run main.go 
 ``` 
 
 ### 2. Running with Docker Compose
